@@ -2,10 +2,7 @@ from requests import Session
 from colorama import Fore,Style
 from os import system as cmd
 from bs4 import BeautifulSoup as BS
-import argparse
-import sys
-import nmap
-import socket
+import argparse, sys, nmap, socket
 
 s = Session()
 p = nmap.PortScanner()
@@ -29,7 +26,7 @@ def banner(target):
       []  /  \_/\=/\_/  \\
 -----------|   ABOUT   |-----------{Fore.WHITE}
  SCRIPT    : Network Scanner V0.2
- TARGET    : {target}
+ TARGET    : {Fore.YELLOW}{target}
  AUTHOR    : Gh05t666nero
  WEBSITE   : Deepweb.id
 {Fore.BLUE}-----------|   TOOLS   |-----------''')
@@ -75,7 +72,7 @@ def searching(exploit_id):
 #############################################################
 # TITLE   : {soup.find('meta', {'property':'og:title'})['content'].title()}
 # SEVERITY: {soup.find('span', {'class':'badge badge-critical'}).text.title()}
-# SYNOPSYS: {soup.find('meta', {'name':'description'})['content']}
+# SYNOPSIS: {soup.find('meta', {'name':'description'})['content']}
 
 #############################################################
 [*] DESCRIPTION:
@@ -95,7 +92,7 @@ def searching(exploit_id):
 
 
 if args.target is not None and args.search is None:
-    scanning(args.target)
+    scanning(socket.gethostbyname(args.target))
 elif args.search is not None and args.target is None:
     searching(args.search)
 else:
