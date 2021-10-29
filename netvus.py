@@ -26,7 +26,7 @@ def banner(target):
       []  /  \_/\=/\_/  \\
 -----------|   ABOUT   |-----------{Fore.WHITE}
  SCRIPT    : Network Scanner V0.2
- TARGET    : {Fore.YELLOW}{target}
+ TARGET    : {Fore.YELLOW}{target}{Fore.WHITE}
  AUTHOR    : Gh05t666nero
  WEBSITE   : Deepweb.id
 {Fore.BLUE}-----------|   TOOLS   |-----------''')
