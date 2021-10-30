@@ -37,9 +37,9 @@ def scanning(host):
     port = list(scan['scan'][host]['tcp'].keys())
     for tekno in port:
         product = scan['scan'][host]['tcp'][tekno]['product']
-        version = scan['scan'][host]['tcp'][tekno]['version']
+        version = scan['scan'][host]['tcp'][tekno]['version'].strip()
         outputs = f'{product} {version.strip()}'
-        if outputs == ' ' or outputs == '':
+        if version == ' ' or version == '':
             continue
         else:
             headers = {'User-Agent':'Mozilla/5.0 (X11; Linux i686; rv:93.0) Gecko/20100101 Firefox/93.0'}
