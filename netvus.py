@@ -79,7 +79,7 @@ def searching(exploit_id):
     print(f'''{Fore.WHITE}
 #############################################################
 # TITLE   : {soup.find('meta', {'property':'og:title'})['content'].title()}
-# SEVERITY: {soup.find('span', {'class':'badge badge-critical'}).text.title()}
+# SEVERITY: {soup.find_all('div', {'class':'col-md-4'})[1].find('span').text}
 # SYNOPSIS: {soup.find('meta', {'name':'description'})['content']}
 
 #############################################################
