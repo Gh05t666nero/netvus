@@ -1,3 +1,16 @@
+#        ,    ,    /\   /\
+#       /( /\ )\  _\ \_/ /_
+#       |\_||_/| < \_   _/ >
+#       \______/  \|0   0|/
+#         _\/_   _(_  ^  _)_
+#        (_()_) /\| V"""V|/\
+#          ||   \  \_____/  /
+#          ||   /\   )=(   /\
+#          []  /  \_/\=/\_/  \
+# |----------------------------------------|
+# | Kontribusi Boleh, Ganti Author Jangan! |
+# |----------------------------------------|
+
 from requests import Session
 from colorama import Fore,Style
 from os import system as cmd
@@ -36,7 +49,7 @@ def scanning(host):
     scan = p.scan(host,'0-1000')
     port = list(scan['scan'][host]['tcp'].keys())
     for tekno in port:
-        product = scan['scan'][host]['tcp'][tekno]['product']
+        product = scan['scan'][host]['tcp'][tekno]['product'].strip()
         version = scan['scan'][host]['tcp'][tekno]['version'].strip()
         outputs = f'{product} {version.strip()}'
         if version == ' ' or version == '':
@@ -45,20 +58,15 @@ def scanning(host):
             headers = {'User-Agent':'Mozilla/5.0 (X11; Linux i686; rv:93.0) Gecko/20100101 Firefox/93.0'}
             tenable = 'https://www.tenable.com/_next/data/B307Ei_yBxIgZ9c_Tg6vU/en/plugins/search.json?q='+outputs
             request = s.get(tenable, headers=headers).json()
-
-            if "errorMessage" in request:
-                sys.exit(f"{Fore.RED}ERROR KETIKA MENGIDENTIFIKASI KERENTANAN")
-            else:
-                print(f'\n{Fore.BLUE}[!] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.BLUE} TERPAPAR CVE!')
-                plugins = request['pageProps']['plugins']
-                for plugin in plugins:
-                    desc = plugin['_source']['description'].split(' ')
-                    scid = plugin['_source']['script_id']
-                    name = plugin['_source']['script_name']
-                    words = outputs.split(' ')
-                    if any(words[0] in word for word in desc) and any(words[1] in word for word in desc):
-                        print(f'''{Fore.RED}             [{scid}] {name}''')
-                        break
+            print(f'\n{Fore.BLUE}[!] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.BLUE} TERPAPAR CVE!')
+            plugins = request['pageProps']['plugins']
+            for plugin in plugins:
+                desc = plugin['_source']['description'].split(' ')
+                scid = plugin['_source']['script_id']
+                name = plugin['_source']['script_name']
+                if any(product in word for word in desc) and any(version in word for word in desc):
+                    print(f'''{Fore.RED}             [{scid}] {name}''')
+                    break
 
 def searching(exploit_id):
     banner(args.search)
