@@ -10,25 +10,25 @@
 ## Instalasi
 * **Linux**
   ```bash
-  pip3 install -r requirements.txt
+  $ pip3 install -r requirements.txt
   ```
 * **Termux**
   ```bash
-  pip install -r requirements.txt
+  $ pip install -r requirements.txt
   ```
 
 ## Penggunaan
 * **Menampilkan Pesan Bantuan**
   ```bash
-  python3 netvus.py -h
+  $ python3 netvus.py -h
   ```
 * **Memindai Kerentanan**
   ```bash
-  python3 netvus.py -t <IP/Domain>
+  $ python3 netvus.py -t <IP/Domain>
   ```
 * **Melihat Detail Kerentanan**
   ```bash
-  python3 netvus.py -s <Exploit ID>
+  $ python3 netvus.py -s <Exploit ID>
   ```
 ## Lisensi
 [GNU General Public License](https://github.com/Gh05t666nero/netvus/blob/main/LICENSE)
