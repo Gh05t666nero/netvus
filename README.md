@@ -1,5 +1,5 @@
-# Introduction
-**NETVUS** adalah singkatan dari **Network CVE Vulnerability Scanner**, merupakan alat pemindaian kerentanan CVE jaringan yang powerfull. Alat ini terintegrasi dengan database perusahaan peneliti keamanan siber terkemuka di dunia **Tenable**, hal inilah yang membuat **NETVUS** menjadi salah satu alat scanner jaringan yang unggul.
+# Pengantar
+**NETVUS** adalah singkatan dari ***Net**work C**V**E V**u**lnerability **S**canner*, merupakan alat pemindaian kerentanan CVE jaringan yang powerfull. Alat ini terintegrasi dengan database perusahaan peneliti keamanan siber terkemuka di dunia **Tenable**, hal inilah yang membuat **NETVUS** menjadi salah satu alat scanner jaringan yang unggul.
 
 ## Fitur-Fitur
 * **Memindai Kerentanan**
