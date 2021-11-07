@@ -38,7 +38,7 @@ def banner(target):
       ||   /\   )=(   /\\
       []  /  \_/\=/\_/  \\
 -----------|   ABOUT   |-----------{Fore.WHITE}
- SCRIPT    : Network Scanner V0.2
+ SCRIPT    : NETVUS V0.3
  TARGET    : {Fore.YELLOW}{target}{Fore.WHITE}
  AUTHOR    : Gh05t666nero
  WEBSITE   : Deepweb.id
