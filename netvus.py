@@ -63,11 +63,11 @@ def netscan(host):
                 scid = plugin['_source']['script_id']
                 name = plugin['_source']['script_name']
                 if any(version in word for word in desc):
-                    print(f'\n{Fore.BLUE}[!] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.BLUE} TERPAPAR CVE!')
+                    print(f'{Fore.BLUE}[!] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.BLUE} TERPAPAR CVE!')
                     print(f'''{Fore.RED}             [{scid}] {name}''')
                     break
                 else:
-                    print(f'\n{Fore.GREEN}[*] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.GREEN} TIDAK TERPAPAR CVE!')
+                    print(f'{Fore.GREEN}[*] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.GREEN} TIDAK TERPAPAR CVE!')
                     break
         elif outputs == ' ""':
             print(f'{Fore.YELLOW}[!] PORT {Fore.WHITE}{tekno} {Fore.YELLOW}GAGAL DI IDENTIFIKASI!')
