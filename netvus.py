@@ -66,9 +66,8 @@ def netscan(host):
                     print(f'{Fore.BLUE}[!] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.BLUE} TERPAPAR CVE!')
                     print(f'''{Fore.RED}             [{scid}] {name}\n''')
                     break
-                else:
-                    print(f'{Fore.GREEN}[*] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.GREEN} TIDAK TERPAPAR CVE!')
-                    break
+                print(f'{Fore.GREEN}[*] PORT {Fore.WHITE}{tekno} ({outputs}){Fore.GREEN} TIDAK TERPAPAR CVE!')
+                break
 
 
 def searching(exploit_id):
